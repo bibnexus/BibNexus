@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+title: BibNexus
+message: "If you use this software, please cite it as below."
+abstract: >-
+  BibNexus is a local-first desktop application for bibliographic data
+  management and cleaning, purpose-built for the data-preparation stage of
+  bibliometric analysis, systematic reviews and meta-analyses. It imports
+  reference records exported from Web of Science, Scopus, PubMed, Embase,
+  EndNote and major Chinese databases (CNKI, Wanfang, VIP, Yiigle), and
+  standardizes author addresses, institution names, countries and cited
+  references during import. Within a single workspace it provides isolated
+  multi-library management, classification, reading screening, fast and
+  advanced search, duplicate detection and removal, batch field editing, a
+  recycle bin with undo/redo, and a local data-statistics workbench. Cleaned
+  records can be exported as Web of Science tagged plain text or EndNote CIW to
+  feed downstream tools such as CiteSpace, VOSviewer and Bibliometrix. BibNexus
+  focuses on reliable local data curation and does not itself perform network
+  visualization or knowledge-graph rendering.
+type: software
+authors:
+  - family-names: Lu
+    given-names: Huan
+    affiliation: "Ecoo Network Technology, Nanning, China"
+    orcid: "https://orcid.org/0009-0003-4341-8773"
+version: 1.0.0
+date-released: "2026-06-23"
+url: "https://www.bibnexus.com"
+repository-artifact: "https://github.com/bibnexus/BibNexus/releases"
+keywords:
+  - literature management
+  - bibliometrics
+  - reference deduplication
+  - data cleaning
+  - systematic review
+# 说明:
+#   - version / date-released 必须与 Zenodo 上实际发布的安装包版本一致。
+#   - Zenodo 分配 DOI 后，取消下面 identifiers 的注释并填入 concept DOI
+#     （跨版本聚合 DOI，推荐用于长期引用）。
+#   - 本软件为闭源专有软件（proprietary），不采用 MIT 等开源许可证，故不填 license 字段。
+#     最终用户许可协议（EULA）及官网说明为准。
+#   - 公开仓库仅发布安装包与文档
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.XXXXXXX"
+#     description: "The concept DOI for all versions of BibNexus"
