@@ -1,5 +1,7 @@
 # BibNexus
 
+**[English](./README.en.md) | 简体中文**
+
 **多来源合并 · 数据清洗 · 专为文献计量而生**
 
 官网：<https://www.bibnexus.com>
