@@ -75,7 +75,7 @@ Eliminates institutional fragmentation in scientometric collaboration networks t
 * **Detached Autonomous Screen Window (`PrismaStandalone`)**: Pops the screening interface into an independent native desktop window, enabling efficient dual-monitor workflows ("Primary Display for PDF full-text reading; Secondary Display for card-deck blind evaluation and PICO extraction");
 * **Embedded In-Situ PICO Extraction Drawer**: Extracts Population (P), Intervention (I), Comparison (C), and Outcome (O) variables during full-text review, exporting structured baseline characteristic matrices directly to CSV;
 * **Dynamic Arithmetic-Conserved PRISMA 2020 Flow Diagram Engine**:
-  * Real-time arithmetic conservation verification: $N_{\text{Identified}} - N_{\text{Duplicates}} - N_{\text{Phase1\_Excluded}} - N_{\text{Phase2\_Excluded}} = N_{\text{Included}}$;
+  * Real-time arithmetic conservation verification: `N(Identified) - N(Duplicates) - N(Phase 1 Excluded) - N(Phase 2 Excluded) = N(Included)`;
   * Dual-paradigm layout: Clinical 5-box standard vs. Bibliometric 4-box analysis;
   * Pre-configured themes: Classic Academic Blue, Lancet Green, and Monochrome Grayscale;
   * Export options: Vector SVG, high-resolution PNG, and publication-ready vector PDF.
