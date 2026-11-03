@@ -1,164 +1,202 @@
+<div align="center">
+
 # BibNexus
 
-**[English](./README.en.md) | 简体中文**
+**Software for Multi-Source Bibliographic Management, Data Cleaning, Screening, and Statistical Analysis**
 
-**多来源合并 · 数据清洗 · 专为文献计量而生**
+[![Release](https://img.shields.io/badge/Release-v1.2.0-blue.svg)](https://github.com/bibnexus/BibNexus/releases)
+[![DOI](https://img.shields.io/badge/DOI-10.6084%2Fm9.figshare.34899999-blue.svg)](https://doi.org/10.6084/m9.figshare.34899999)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-brightgreen.svg)](https://www.bibnexus.com)
 
-官网：<https://www.bibnexus.com>
+**[English](README_en.md)** | **[简体中文](README_zh.md)**
 
-BibNexus 是一款面向科研人员的本地桌面软件，专门解决你在做文献计量、系统综述、Meta 分析或知识图谱研究时，**从数据库导出题录到真正能用之间那段最脏、最耗时、最容易出错的整理工作**。
+<p align="center">
+  <b>Website:</b> <a href="https://www.bibnexus.com">https://www.bibnexus.com</a> &nbsp;|&nbsp;
+  <b>How to Cite:</b> <a href="https://www.bibnexus.com/en/citation">https://www.bibnexus.com/en/citation</a>
+</p>
 
-它把来自不同数据库、格式各异、字段混乱、大量重复的原始题录，整理成一个干净、规范、可复用的本地题录库，让你能安心进入后续的分析和写作。这一步，正是 EndNote、Zotero、CiteSpace、VOSviewer 都没替你做好的地方——BibNexus 专注把它做到极致。
-
----
-
-## 文献计量，看起来从图谱开始，实际上从数据开始
-
-一份题录文件是否干净，会直接影响后面的关键词共现、机构合作、作者合作、国家分布、来源统计、参考文献分析，甚至影响你最终能不能解释图谱结果。
-
-更现实的是，很多文献计量研究已经很难只靠单一数据库的数据支撑。只用 Web of Science 一个来源，容易出现检索范围偏窄、来源覆盖不足、样本代表性不够的问题；进入投稿和审稿阶段，这类问题很容易变成硬伤。
-
-所以，**多数据库合并分析正在从"可选增强"变成很多课题的基本动作**。审稿人追问的通常不是你图画得够不够漂亮，而是更基础的问题：
-
-- 为什么只选这个数据库？
-- 其他来源有没有遗漏？
-- 重复记录怎么处理？
-- 不同来源的作者、机构、国家和参考文献字段怎么统一？
-
-如果这些问题没有在数据阶段处理清楚，后面图谱再好看也站不稳。**BibNexus 就是帮你把这道数据关口守住的工具。**
+</div>
 
 ---
 
-## 你是不是也遇到过这些麻烦
+## 📌 Positioning & Core Value
 
-- 从 Web of Science、Scopus、PubMed、中国知网各导了一批题录，格式全不一样，合在一起乱成一团。
-- 同一篇文献在不同数据库里出现好几次，手动查重看到眼花，还怕删错。
-- 作者单位一会儿写全称一会儿写缩写，国家名有的英文有的中文，机构名脏得没法统计。
-- 一个课题、一个综述、一个团队项目本该各管各的，结果所有文献堆在一个文件里，越用越乱。
-- 好不容易整理完，导出到分析软件时格式又对不上，只能再手动改一遍。
+**BibNexus** is a cross-platform, local-first desktop software engineered for researchers, clinical scientists, information specialists, and postgraduate scholars worldwide. Tailored for empirical methodologies across **Scientometrics**, **Science Mapping**, and **Systematic Reviews & Meta-Analyses (PRISMA 2020)**, BibNexus bridges the laborious, error-prone data curation gap between raw bibliographic exports and downstream analytical environments.
 
-BibNexus 就是为了终结这些重复劳动而做的。
+Traditional research workflows frequently suffer from fragmented database schemas, corrupted character encodings, inconsistent institutional names, destructive deduplication mishaps, unstandardized screening logs, and compliance vulnerabilities associated with uploading prospective protocols to third-party cloud servers. BibNexus delivers a self-contained, offline desktop environment: featuring 9-database multi-source ingestion, a 5-stage ROR/AI institutional affiliation and country normalization pipeline, a four-tier progressive deduplication protocol with side-by-side divergence inspection, a full-lifecycle PRISMA 2020 two-phase screening workflow with embedded PICO extraction, an arithmetic-conserved PRISMA flow diagram engine, thesaurus harmonization (`.bnvm`), and 16-dimension bibliometric statistics. All data resides in local, isolated single-file databases (`.bndb`), guaranteeing 100% offline data privacy without remote telemetry.
 
 ---
 
-## 它能帮你做什么
+## 🚀 Why BibNexus? Resolving 5 Structural Bottlenecks
 
-### 📥 一站导入主流数据库
-直接导入这些来源导出的题录文件，自动识别格式，告诉你导入了多少条、失败了哪些、为什么失败：
-
-- **国际数据库**：Web of Science（纯文本）、Scopus（CSV）、PubMed（nbib）、Embase（RIS）、EndNote（RIS）
-- **中文数据库**：知网 CNKI、万方、维普 VIP、中华医学库（RefWorks 格式）
-
-### 🧹 导入即清洗，少走回头路
-题录进库的同时，BibNexus 就帮你把最麻烦的字段整理好：
-
-- 作者地址标准化
-- 机构名称提取
-- 参考文献格式标准化
-- 国家/地区名称统一
-- 文献类型规整
-
-不用等入库后再一条条手工改。
-
-### 🗂️ 多个题录库，彼此隔离，互不干扰
-一个系统综述一个库、一个团队课题一个库、一个历史项目一个库，或者按中英文来源分库——想怎么组织都行。每个库的分类、收藏、查重结果、回收站完全独立，**绝不会串库、错库**。
-
-### 🔍 搜得准，定得到
-- **快速搜索**：随手定位一篇文献，清空后回到原来的浏览状态。
-- **高级搜索**：按年份、作者、来源、关键词、DOI、文献类型等多条件组合，把结果沉淀成可回看、可重命名的搜索结果集。
-
-### ✅ 人工筛选，纳排流程有条理
-做系统综述、Meta 分析，少不了一篇篇过标题摘要、决定纳入还是排除。BibNexus 把这套流程做进了工作区：
-
-- 标记已读/未读，浏览过的题录自动标记已读
-- 自定义筛查状态名称，贴合你的纳排标准
-- 右键批量设置一批题录的筛查状态
-- 按已读/未读或筛查状态快速筛选，随时掌握进度
-
-### 🔁 查重去重，先看清再动手
-先按你选的规则（DOI、WOS ID、PubMed ID、Scopus ID 等强标识符优先，或自定义字段组合）找出重复分组，让你看清每组差异、选定要保留的主题录，再放心批量除重。整个查重在后台运行，不卡界面；删错了还能恢复。
-
-### ✏️ 批量修改，一次搞定一批
-统一补来源、替换关键词、清理作者字段、字段互换、文本追加/前置/替换/清空、大小写处理……一批题录一次改完，还会告诉你成功、跳过、失败各多少。系统字段受保护，不怕误改。
-
-### 🔤 词汇合并，让统计不被"不同写法"拖累
-同一个机构写成"Harvard University""Harvard Univ.""哈佛大学"，同一个关键词单复数、大小写、缩写各不相同——不合并的话，共现、合作、分布统计全会被拆成好几份，结论自然不准。词汇合并工作台专门解决这道文献计量里最隐蔽的坑：
-
-- 从题录库导入机构、国家、关键词等词条，离线整理归并规则和剔除词
-- 支持导入 CiteSpace、VOSviewer 现成的规则文件，不用从零开始
-- 内置英文规范化（缩写、特殊词处理），减少手工比对
-- 整理成果可**写回题录库**（可撤销），也可**分项导出**为 CiteSpace 合并/剔除表、Bibliometrix 同义词/停用词、VOSviewer 合并文件，直接喂给外部工具
-
-### 🗑️ 删错不慌，操作可回退
-题录软删除后进回收站，按删除前的分类组织，可单条恢复、可整类恢复、可恢复到指定分类。核心操作支持撤销/重做，标题栏能看到操作历史。
-
-### 📊 本地数据统计工作台
-想知道"这个库里到底有什么""清洗后的数据分布可不可靠"？选定题录库和范围，一键生成题录数量、年份、来源、作者、机构、国家/地区、基金机构、参考文献等单维统计表。
-
-### 📤 导出即用，无缝衔接分析工具
-把整理好的题录导出为下游工具认的格式，不用再手动转换：
-
-- **Web of Science 标记纯文本（Tagged TXT）**——文献计量后续流程的核心交换格式，可直接进 CiteSpace、VOSviewer、Bibliometrix。
-- **EndNote CIW**
-
-支持导出单篇、选中多篇、整库、指定分类、全部收藏或某个搜索结果；大批量自动拆分文件，文件名跨平台稳定。
+| Methodological Bottleneck | BibNexus Architecture & Breakthrough |
+| :--- | :--- |
+| **Heterogeneous Multi-Database Schema Drift**<br>Databases export disparate, non-standardized field tags. Merging records results in field loss and syntax corruption that breaks downstream mapping software. | **Native 9-Database Ingestion & Web of Science Field Standardization**<br>Automatically converts exports from 9 major international and Chinese databases into Web of Science standard field tags (`PT`, `AU`, `AF`, `TI`, `SO`, `DE`, `AB`, `C1`, `RP`, `PY`, etc.) for seamless ingestion. |
+| **Institutional Affiliation Fragmentation**<br>Disparate spelling variants, subsidiary departments, and hospital names for the same parent university fragment institutional co-authorship networks. | **Automated 5-Stage ROR + AI Affiliation & Country Normalization**<br>Deterministic noise stripping $\to$ Right-to-left geographic anchoring (ISO 3166-1) $\to$ Embedded 110,000+ ROR knowledge base parent matching $\to$ Edge-native LLM micro-batching fallback $\to$ Web of Science bracketed reconstruction. Supports 3 institutional rollup preferences. |
+| **Destructive Deduplication & False Exclusions**<br>Over-reliance on DOI misses records without persistent identifiers, while unverified title matching risks accidental deletion of distinct trials. | **Four-Tier Progressive Deduplication & Divergence Inspection**<br>Tier 1 Identifier exact matching $\to$ Tier 2 Multi-field strict matching $\to$ Tier 3 Source-level matching $\to$ Tier 4 Relaxed title-year matching with side-by-side divergence matrices and primary-record heuristics. Non-destructive Recycle Bin isolation. |
+| **Screening Traceability Gaps & Accidental Decision Loss**<br>Screening in general-purpose spreadsheets lacks structured audit trails. Global undo chains indiscriminately roll back whole libraries upon minor misclicks. | **PRISMA 2020 Screening & 50-Step Local Undo Buffer**<br>Baseline reference pool freezing; Card-deck (`I`/`M`/`E` blind evaluation) & dense table views; Standardized hierarchical exclusion registry; Dedicated 50-step per-project local undo stack (pressing `Z` only reverses the current record); Embedded PICO drawer. |
+| **Cloud Data Exposure & Compliance Risks**<br>Commercial cloud platforms mandate uploading prospective review protocols and unpublished literature corpora, risking institutional data privacy violations. | **Local-First Data Sovereignty (.bndb Engine)**<br>Single-file relational database containers (`.bndb`). 100% offline execution without network dependencies or telemetry, fully compliant with air-gapped laboratory and hospital network mandates. |
 
 ---
 
-## 为什么选 BibNexus
+## 🌟 Core Feature Matrix
 
-- **本地优先，数据可控**：所有题录都存在你自己电脑上的本地库文件里，不上传云端，隐私和数据安全掌握在自己手里。
-- **专注做好一件事**：不贪大求全，只把"题录治理"这段做到极致——导入准、清洗狠、查重稳、导出顺。
-- **信息密集但不拥挤**：左侧库树、中间题录表格、右侧详情面板的三栏工作台，专为长期高频操作设计，安静、专业、好扫读。
-- **中英文双语，深浅主题**：界面支持简体中文和英文，浅色/深色/跟随系统主题，还能选强调色，长时间用眼更舒服。
-- **跨平台**：支持 Windows、macOS、Linux。
+### 1. 📥 Multi-Source Academic Ingestion (9 Databases)
+* **Comprehensive Academic Coverage**:
+  * **International Databases**: Web of Science (TXT), PubMed (NBIB), Scopus (CSV), Embase (RIS), EndNote (CIW / RIS mixed exports);
+  * **Chinese Academic Repositories**: CNKI (RefWorks), Wanfang Data (RefWorks), VIP Information (CQVIP RefWorks), Chinese Medical Journal Network (Yiigle RefWorks).
+* **Ingestion-Time Standardization**: Automatically normalizes dual-layer document type hierarchies (core categories preserved alongside source-native types), parses persistent identifiers (DOI, PMID, UT, EID), and dissects author affiliation blocks.
+
+### 2. 🏛️ Automated 5-Stage Affiliation & Country Normalization (ROR & AI)
+Eliminates institutional fragmentation in scientometric collaboration networks through an algorithmic pipeline:
+1. **Stage 1: Deterministic Noise Stripping**: Strips email addresses, ORCIDs, telephone/fax numbers, postal codes, and extraneous punctuation;
+2. **Stage 2: Right-to-Left Geographic Anchoring**: Resolves ISO 3166-1 country codes, standardizing modern geopolitical designations (Türkiye, Czechia, KSA) and back-tracing US, Australian, and Canadian states/provinces;
+3. **Stage 3: Embedded 110,000+ ROR Knowledge Base Disambiguation**: Matches academic entities against the offline Research Organization Registry using spatial-topological and token-weighted cross-scoring ($\text{Score} \ge 80$), cleanly mapping subsidiary hospitals and colleges to their parent universities;
+4. **Stage 4: Edge LLM Micro-Batching Fallback**: Employs compact 20-record micro-batch inferences for unstructured, non-standard long-tail affiliations;
+5. **Stage 5: Web of Science Standard Reassembly**: Re-structures addresses into standard `[Primary Institution], [Sub-units], [City/State], [Country].` while maintaining strict author-to-address square bracket associations `[Author A; Author B]`.
+* **Three Institutional Rollup Preferences**: "Parent University First", "Parent University First with Affiliated Entity Following", and "Affiliated Hospital First", catering to both global academic evaluations and clinical ranking needs.
+
+### 3. 🔁 Four-Tier Progressive Deduplication Protocol
+* **Progressive Deduplication Ladder**:
+  * **Tier 1: Persistent Identifier Exact Matching**: Groups records sharing identical DOIs, PubMed PMIDs, WoS UT accession numbers, or Scopus EIDs with zero false-positive risk;
+  * **Tier 2: Comprehensive Multi-Field Rule**: Groups records based on "Title + Publication Year + First Author + Abstract";
+  * **Tier 3: Source-Level Combinatorial Rule**: Evaluates "Title + Publication Year + First Author + Source/Journal";
+  * **Tier 4: Relaxed Combinatorial Rule & Manual Verification**: Matches on "Title + Publication Year" with text fault tolerance (casing, punctuation, and whitespace insensitivity).
+* **Side-by-Side Comparison Matrix**: Candidate duplicate pairs in permissive tiers are presented in an interactive matrix highlighting field discrepancies (missing abstracts, author roster variations). Evaluates metadata completeness to recommend the optimal primary record, allowing researchers to inspect differences before soft-deleting secondary duplicates to the Recycle Bin;
+* **Non-Destructive Recycle Bin**: Preserves original categorization structures and enables instantaneous, fully reversible one-click restoration.
+
+### 4. 📋 Full-Lifecycle PRISMA 2020 Screening Pipeline
+* **Baseline Cohort Freezing**: Freezes the post-deduplication reference pool upon review initiation, safeguarding methodological audit trails;
+* **Two-Phase Dual-Interface Screening**:
+  * **Phase 1 (Title/Abstract)**: High-throughput **Card-Deck View** for rapid keyboard-driven evaluation (`I` Include, `M` Maybe, `E` Exclude with numeric reason shortcuts, `Z` Undo, `P` PICO drawer) alongside dense tabular views;
+  * **Phase 2 (Full-Text)**: Side-by-side inspection of attached local PDF files or online publisher versions via DOI resolution;
+* **Standardized Exclusion Reasons Registry**: Structured hierarchical taxonomy (Ineligible Population, Ineligible Intervention, Non-RCT Design, Missing Primary Outcomes, etc.) with custom color tagging and template sharing;
+* **50-Step Local Undo Buffer**: Operates strictly within the current screening project, ensuring that pressing `Z` reverses only the immediate classification misclick without side effects on overall library state;
+* **Detached Autonomous Screen Window (`PrismaStandalone`)**: Pops the screening interface into an independent native desktop window, enabling efficient dual-monitor workflows ("Primary Display for PDF full-text reading; Secondary Display for card-deck blind evaluation and PICO extraction");
+* **Embedded In-Situ PICO Extraction Drawer**: Extracts Population (P), Intervention (I), Comparison (C), and Outcome (O) variables during full-text review, exporting structured baseline characteristic matrices directly to CSV;
+* **Dynamic Arithmetic-Conserved PRISMA 2020 Flow Diagram Engine**:
+  * Real-time arithmetic conservation verification: $N_{\text{Identified}} - N_{\text{Duplicates}} - N_{\text{Phase1\_Excluded}} - N_{\text{Phase2\_Excluded}} = N_{\text{Included}}$;
+  * Dual-paradigm layout: Clinical 5-box standard vs. Bibliometric 4-box analysis;
+  * Pre-configured themes: Classic Academic Blue, Lancet Green, and Monochrome Grayscale;
+  * Export options: Vector SVG, high-resolution PNG, and publication-ready vector PDF.
+* **Dual-Reviewer Blind Screening & Reliability Evaluation**: Synthesizes $2\times 2$ contingency tables, computes percent agreement $P_o$, Cohen's Kappa coefficient $\kappa$, and 95% confidence intervals, supported by third-reviewer arbitration for discrepant classifications.
+
+### 5. 🔬 Bibliometric Lab & Thesaurus Harmonization
+* **16-Dimension Macro/Micro Statistical Suite**:
+  * Analyzes annual publication output, journal distributions, core authors, institutional rankings, geographic spread, and keyword frequencies;
+  * Fits annual growth to non-linear Logistic growth curves;
+  * Evaluates Price's Law core author threshold $M = 0.749\sqrt{N_{\max}}$, assessing the 50% community productivity benchmark;
+  * Partitions Bradford's Law core, related, and peripheral journal zones ($1 : n : n^2$);
+  * Toggles between Full Counting and Fractional Counting, with one-click export of structured CSV reports.
+* **Thesaurus Harmonization Engine (`.bnvm`)**:
+  * Standalone project format recording synonym mappings and cleanup rules for reproducible curation;
+  * Standardized Title Casing algorithm protecting 21 common prepositions/conjunctions while exempting domain-specific acronyms (`fMRI`, `CRISPR-Cas9`, `mRNA`);
+  * Bidirectional import and export for CiteSpace alias tables (`citespace.alias`) and VOSviewer thesaurus files (`thesaurus.txt`).
+
+### 6. 📤 Frictionless Downstream Exports
+* **Web of Science Tagged Plain Text (WOS TXT)**: Exported `.txt` files conform to Web of Science field standards (including `PT`, `AU`, `AF`, `TI`, `SO`, `DE`, `AB`, `C1`, `RP`, `PY`), ready for direct ingestion into **CiteSpace**, **VOSviewer**, **VosGraph**, **HistCite**, or R **Bibliometrix** without third-party converters;
+* **Standard Academic Formats**: Exports EndNote CIW, standard RIS, and structured CSV/Excel for direct ingestion into **RevMan**, **Stata**, and **Zotero**.
+
+### 7. 🛡️ Local-First Data Sovereignty & Privacy
+* **Self-Contained Database Containers (`.bndb`)**: Each library operates as an isolated single-file database. All records, screening audits, and PDF attachment links remain exclusively on the user's filesystem;
+* **100% Offline Capability**: Free from server telemetry or cloud storage requirements, operating smoothly in air-gapped and protected enterprise environments;
+* **Portable Library Backups**: `.bndb` files can be archived, moved, or duplicated without risk of project cross-contamination.
 
 ---
 
-## 如何获取
+## 💻 Download & Installation
 
-BibNexus 是面向 Windows、macOS、Linux 的本地桌面软件，可从官网下载：
+BibNexus is distributed as a self-contained desktop package. **No external Java, Python, or database runtimes are required.**
 
-官网：<https://www.bibnexus.com>
+### 1. Download Channels
+* **Official Website**: <https://www.bibnexus.com/download>
+* **GitHub Releases**: [https://github.com/bibnexus/BibNexus/releases](https://github.com/bibnexus/BibNexus/releases)
 
-## 如何引用
+### 2. Platform Specifications
 
-如果 BibNexus 对你的研究有帮助，欢迎在论文中引用。以下是 BibNexus 软件的研究方法写法参考，软件版本号和内容细节请以自身实际情况为准进行修改。
+| Operating System | Package Format | Architecture | Minimum System Version |
+| :--- | :--- | :--- | :--- |
+| **Windows** | `.exe` Installer / `.zip` Portable | x64 / ARM64 | Windows 10 (Build 1809+) / Windows 11 |
+| **macOS** | `.dmg` Disk Image | Apple Silicon (M1/M2/M3/M4 Series aarch64) / Intel (x86_64) | macOS 12 Monterey or later |
+| **Linux** | `.AppImage` Self-Contained / `.deb` Package | x64 | Ubuntu 20.04+, Debian 11+, Fedora 36+ |
 
-建议引用下方参考文献：付费用户不强制引用，免费用户未引用即构成许可违规。
+---
 
-**一句话示例**
+## 📖 In-Text Methodology Narratives (Ready to Copy)
 
-> 本研究采用易酷科研开发的 BibNexus 多数据库题录管理软件[1]，完成文献题录的导入、字段规范化、查重去重与格式导出，以确保参考文献数据的完整性与一致性。
+To facilitate standardized methodological reporting in international peer-reviewed journals (SCI / SSCI / Scopus) and postgraduate dissertations, the following templates are provided:
 
-**一、完整版**
+### Template 1: Scientometrics & Science Mapping (Full Version)
+> **1.2 Data Collection and Preprocessing**  
+> Raw bibliographic records were retrieved on `[Search Date]` from `[Databases, e.g., Web of Science, Scopus, PubMed, CNKI, Wanfang, VIP]`, covering the publication period from `[Start Year]` to `[End Year]`, yielding `[N]` initial bibliographic records. The search query was as follows:  
+> `[Insert specific search query/queries, e.g., WoS query: TS=("bibliometric*" OR "scientometric*"); CNKI query: SU=("bibliometrics" OR "knowledge mapping")]`  
+> `(Note: If multiple databases are retrieved, indicate the exact query and record count for each database separately.)`  
+> 
+> All raw records were imported into BibNexus (version 1.2.0) `[1]` for data cleaning and standardization:  
+> **(1) Automated Ingestion and Standardization**: Raw multi-source records were parsed and converted into Web of Science field formats. Author affiliations were automatically dissected and normalized using the embedded Research Organization Registry (ROR) knowledge base and ISO 3166-1 country standards, aggregating departments and subsidiary clinical units to their parent academic institutions to prevent fragmentation in institutional collaboration networks;  
+> **(2) Multi-Round Tiered Deduplication**: To eliminate cross-database duplicates while strictly preventing the accidental deletion of distinct studies with identical titles, a four-tier progressive deduplication protocol was conducted: (1) **Persistent Identifier Matching**: Records were first matched exactly on persistent digital identifiers (DOI, PubMed PMID, WoS UT accession numbers); (2) **Strict Multi-Field Matching**: Unidentified records were screened using the combination of "Title + Publication Year + First Author + Abstract"; (3) **Source-Level Matching**: Remaining entries were screened using "Title + Publication Year + First Author + Source/Journal"; (4) **Relaxed Matching with Manual Discrepancy Verification**: Finally, a relaxed "Title + Publication Year" rule was executed with case, punctuation, and whitespace tolerance. Because title-and-year matching alone is relatively permissive and carries a risk of false positives (e.g., distinct brief communications or editorials published in the same year), all candidate duplicate pairs in this round were manually inspected side-by-side to verify field-level differences and designate primary records, removing `[N]` duplicate records in total;  
+> **(3) Manual Eligibility Screening**: Titles and abstracts were screened to exclude non-research items (conference calls, book reviews, errata, editorials) and off-topic records (`[N]` excluded);  
+> **(4) Synonym Harmonization**: Keywords were normalized for casing (Title Case) with technical acronym protection, synonyms and spelling variants were merged (e.g., merging `[e.g., artificial intelligence into AI]`), and non-informative stop words were filtered.  
+> 
+> Following curation, `[N]` eligible research articles were retained, exported as Web of Science plain text records, and imported into `[CiteSpace / VOSviewer / VosGraph / Bibliometrix]` for `[keyword co-occurrence, institutional collaboration, author co-authorship, and co-citation]` network analysis.
 
-> 本研究使用由易酷科研开发的 BibNexus 软件（版本号：v1.0.2）完成文献题录数据的管理与清洗[1]。BibNexus 是一款面向多数据库场景的题录数据管理工具，支持导入中国知网、万方、维普等平台导出的题录数据，并针对不同平台之间的数据格式差异进行统一规范化。具体处理流程如下：（1）在中国知网、万方、维普平台完成检索后，将题录文件批量导入 BibNexus；（2）设置从严格到宽松的多组查重条件（组合标题、作者、年份等字段），将判定为重复的文献移至 BibNexus 回收站；（3）逐条阅读题录的标题、摘要、关键词等信息，必要时查阅原文，将不符合纳入标准的题录移至回收站；（4）将最终保留的题录按 Web of Science 核心合集字段命名规范导出，以便 CiteSpace、VOSviewer 直接识别，用于文献计量分析与图谱绘制。
+### Template 2: Systematic Reviews and Meta-Analyses (PRISMA 2020 Statement Full Version)
+> **2. Study Selection, Data Extraction, and Quality Control**  
+> This study strictly adhered to the PRISMA 2020 statement. Literature searches were conducted on `[Search Date]` across `[Databases, e.g., PubMed, Embase, Web of Science, and Cochrane Library]` from inception to `[Cutoff Date]`, retrieving `[N]` records. The detailed search strategy was as follows:  
+> `[Insert specific search strategy/queries, e.g., PubMed query: ("pembrolizumab"[Title/Abstract] AND "NSCLC"[Title/Abstract]); Embase query: ('pembrolizumab'/exp AND 'non small cell lung cancer'/exp)]`  
+> `(Note: If multiple databases are searched, indicate the exact query and record count for each database separately.)`  
+> 
+> Deduplication, screening, and evidence extraction were performed in BibNexus (version 1.2.0) `[1]`:  
+> **(1) Tiered Deduplication**: Raw records were ingested and deduplicated via a four-tier protocol progressing from exact persistent identifier matching (DOI, PMID) to multi-field combinations (title-year-author-abstract, title-year-author-source, and relaxed title-year matching with case and punctuation tolerance). In the permissive title-year tier, candidate duplicate pairs were inspected side-by-side to verify field divergence and prevent false positive exclusion of distinct trials, eliminating `[N]` duplicate entries and leaving `[N]` records for initial screening;  
+> **(2) Two-Phase Blind Screening and Reliability Evaluation**: Two reviewers independently conducted blinded title and abstract screening, excluding `[N]` ineligible records. Full texts were subsequently retrieved and reviewed in duplicate, with specific exclusion reasons recorded (e.g., ineligible intervention, non-RCT design, missing primary outcomes), excluding `[N]` studies. Inter-rater agreement achieved a Cohen's kappa of `[0.86]` (95% CI: `[0.82–0.90]`, percent agreement `[96.5%]`), indicating almost perfect reliability. Discrepancies were arbitrated by a third senior reviewer;  
+> **(3) Evidence Extraction**: Study characteristics (participants, interventions, comparators, outcomes) were extracted from the `[N]` included studies using the integrated PICO drawer to generate baseline characteristic tables. The complete screening process is presented in the PRISMA 2020 flow diagram (Figure 1).
 
-**二、精简版**
+---
 
-> 本研究采用易酷科研开发的 BibNexus（v1.0.2）多数据库题录管理软件[1]，完成中国知网、万方、维普平台题录数据的批量导入、格式统一规范化与查重去重，并经人工逐条筛选后，按 Web of Science 核心合集字段命名规范导出，供 CiteSpace、VOSviewer 软件进行文献计量分析与图谱绘制。
+## 📚 Citation Entries
 
-**三、极简版**
+When utilizing BibNexus in your academic manuscripts, dissertations, or research projects, please cite:
 
-> 本研究使用易酷科研开发的 BibNexus 软件[1]完成多平台题录数据的导入、规范化、查重去重与格式导出，以支撑后续文献计量分析。
-
-**四、参考文献（根据期刊或论文要求任选其一）**
-
-*GB/T 7714-2015（中文期刊）*
-
+### 1. APA 7th Edition (Standard for International SCI / SSCI / Scopus Journals)
 ```text
-LU H. BibNexus: multi-database bibliographic data management and cleaning[CP/OL]. Zenodo, 2026. https://doi.org/10.5281/zenodo.21561666.
+Lu, H. (2026). BibNexus: Software for Multi-Source Bibliographic Management, Data Cleaning, Screening, and Statistical Analysis (Version 1.2.0) [Computer software]. figshare. https://doi.org/10.6084/m9.figshare.34899999
 ```
 
-*APA 第 7 版*
-
+### 2. GB/T 7714-2015 Format (Chinese Core Journals and Theses)
 ```text
-Lu, H. (2026). BibNexus: Multi-database bibliographic data management and cleaning [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21561666
+[1] 陆欢. BibNexus: 多源题录管理、数据清洗、文献筛选与统计分析软件 [CP/OL]. (2026-11-03)[引用日期: 2026-11-04]. https://doi.org/10.6084/m9.figshare.34899999.
 ```
 
-*MLA 第 9 版*
-
-```text
-Lu, Huan. BibNexus: Multi-database Bibliographic Data Management and Cleaning. Computer software, Zenodo, 2026, doi:10.5281/zenodo.21561666.
+### 3. BibTeX Entry (LaTeX / Overleaf Compilation)
+```bibtex
+@software{bibnexus_2026,
+  author       = {Lu, Huan},
+  title        = {{BibNexus: Software for Multi-Source Bibliographic Management, Data Cleaning, Screening, and Statistical Analysis}},
+  month        = nov,
+  year         = 2026,
+  publisher    = {figshare},
+  version      = {1.2.0},
+  doi          = {10.6084/m9.figshare.34899999},
+  url          = {https://doi.org/10.6084/m9.figshare.34899999}
+}
 ```
+
+### 4. IEEE Style
+```text
+H. Lu, "BibNexus: Software for Multi-Source Bibliographic Management, Data Cleaning, Screening, and Statistical Analysis," version 1.2.0, figshare, 2026. doi: 10.6084/m9.figshare.34899999.
+```
+
+---
+
+## 💬 Support & Community
+
+* **Website**: <https://www.bibnexus.com>
+* **How to Cite**: <https://www.bibnexus.com/en/citation>
+* **Customer Support**: <https://www.bibnexus.com/contact>
+* **Issue Tracker**: Bug reports and feature suggestions are welcomed via [GitHub Issues](https://github.com/bibnexus/BibNexus/issues).
+
+---
+
+## 📄 License Notice
+
+BibNexus is proprietary software. All rights reserved. This public repository is maintained exclusively for distributing compiled binaries, release packages, user manuals, and academic citation references. Decompilation, disassembly, unauthorized modification, or secondary commercial distribution of executable binaries is strictly prohibited without explicit prior written authorization.
