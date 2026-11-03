@@ -75,7 +75,7 @@
 * **原生独立多窗口调阅 (`PrismaStandalone`)**：一键将筛选面板弹出至独立桌面子窗口，在双显示器环境下实现“主屏精读 PDF 全文，副屏盲打判定与提取特征”的沉浸式协同；
 * **就地嵌入式 PICO 证据要素提取抽屉**：复筛期即时提取研究人群（P）、干预措施（I）、对照方案（C）及主要结局指标（O），一键导出结构化基线特征总表；
 * **动态算术守恒 PRISMA 2020 流程图引擎**：
-  * 自动验证 $N_{\text{Identified}} - N_{\text{Duplicates}} - N_{\text{Phase1\_Excluded}} - N_{\text{Phase2\_Excluded}} = N_{\text{Included}}$ 算术守恒；
+  * 自动验证流程图算术守恒：`N(识别) - N(查重) - N(初筛排除) - N(复筛排除) = N(最终纳入)`；
   * 提供医学临床试验（五盒标准版）与文献计量扩展（四盒分析版）双范式；
   * 预设经典学术蓝（Classic Blue）、柳叶刀翡翠绿（Lancet Green）与出版级黑白灰（Monochrome Grayscale）三款配色；
   * 一键导出出版级矢量 SVG、超清 PNG 与矢量 PDF。
